@@ -24,20 +24,21 @@ class RegisterController extends Controller
      */
     public function store(Request $request): Response
     {
+        //TODO what is this's return value?
         $validate = $request->validate([
-            'name'                  => 'require|max:225',
-            'email'                 => 'require|email',
-            'password'              => 'require|confirmed|min:6',
-            'mobile'                 => 'require',
-            'password_confirmation' => 'min:6',
+            'name'                  => 'required|max:225',
+            'email'                 => 'required|email',
+            'password'              => 'required|confirmed|min:6',
+            'mobile'                 => 'required',
+            'password_confirmation' => 'min:',
         ]);
 
         $form_data = array();
-
-        $form_data['name'] = $request->name;
-        $form_data['email'] = $request->email;
-        $form_data['mobile'] = $request->mobile;
-        $form_data['password'] = Hash::make($request->password);
+        //input
+        $form_data['name'] = $request->input('name');
+        $form_data['email'] = $request->input(email);
+        $form_data['mobile'] = $request->input('mobile');
+        $form_data['password'] = Hash::make($request->input('password'));
 
         DB::table('users')->insert($form_data);
 
@@ -46,9 +47,9 @@ class RegisterController extends Controller
 
         // check login
         if (!$login_data) {
-            return back()-with('Errno', 'Login are failed');
+            return back()-with('Error', 'Login are failed');
         }
 
-        return redirect()->route('/');
+        return redirect()->route('/test/register');
     }
 }
