@@ -6,7 +6,7 @@
         <div class="w-4/12">
             <form action="{{ URL('/register') }}" method="POST" >
                 @csrf
-                <div class="bg-green-300 mb-4 p-4 text-center rounded-2xl ">
+                <div class="bg-green-300 mb-4 p-4 text-center rounded-2xl">
                     <h1 class="uppercase text-lg">Please Register</h1>
                 </div>
 
