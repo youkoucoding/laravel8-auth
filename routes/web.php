@@ -26,8 +26,8 @@ Route::get('/test/login', function () {
     return '<h1>this function is OK, login</h1>';
 });
 
-Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
-Route::post('/register', [RegisterController::class, 'store']);
+//Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
+Route::get('/register', [RegisterController::class, 'store']);
 
 Route::get('/login', [LoginController::class, 'loginPage']);
 Route::post('/login', [LoginController::class, 'login']);

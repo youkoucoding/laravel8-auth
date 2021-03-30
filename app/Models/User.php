@@ -29,8 +29,8 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password',
-        'remember_token',
+//        'password',
+//        'remember_token',
     ];
 
     /**
@@ -41,4 +41,33 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    /**
+     * @var mixed|string
+     */
+    private $updated_at;
+    /**
+     * @var mixed|string
+     */
+    private $created_at;
+    /**
+     * @var mixed|string
+     */
+    private $email_verified_at;
+    /**
+     * @var mixed|string
+     */
+    private $password;
+    /**
+     * @var mixed
+     */
+    private $email;
+    /**
+     * @var mixed
+     */
+    private $mobile;
+    /**
+     * @var mixed
+     */
+    private $name;
+
 }

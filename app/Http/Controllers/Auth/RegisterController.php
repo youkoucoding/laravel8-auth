@@ -3,9 +3,12 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
+use http\Env\Response;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 
 class RegisterController extends Controller
@@ -24,32 +27,25 @@ class RegisterController extends Controller
      */
     public function store(Request $request): Response
     {
-        //TODO what is this's return value?
-        $validate = $request->validate([
-            'name'                  => 'required|max:225',
-            'email'                 => 'required|email',
-            'password'              => 'required|confirmed|min:6|string',
-            'mobile'                 => 'required',
-            'password_confirmation' => 'min:',
-        ]);
+        $name     = $request->input('name');
+        $mobile   = $request->input('mobile');
+        $email    = $request->input('email');
+        $password = $request->input('password');
 
-        $form_data = array();
-        //input
-        $form_data['name'] = $request->input('name');
-        $form_data['email'] = $request->input(email);
-        $form_data['mobile'] = $request->input('mobile');
-        $form_data['password'] = Hash::make($request->input('password'));
-
-        DB::table('users')->insert($form_data);
-
-        // login after registered
-        $login_data = auth()->attempt($request->only('email', 'mobile', 'password'));
-
-        // check login
-        if (!$login_data) {
-            return back()-with('Error', 'Login are failed');
+        if (empty($name) || empty($password) || empty($mobile) || empty($email)) {
+            return false;
         }
 
-        return redirect()->route('/test/register');
+        $user                    = new User();
+        $user->name              = $name;
+        $user->mobile            = $mobile;
+        $user->email             = $email;
+        $user->password          = Hash::make($password);
+        $user->email_verified_at = Carbon::now()->toDateString();
+        $user->created_at        = Carbon::now()->toDateString();
+        $user->updated_at        = Carbon::now()->toDateString();
+        $user->save();
+
+        return true;
     }
 }
