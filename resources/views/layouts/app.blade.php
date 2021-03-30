@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<nav class='flex justify-between items-center h-16 font-mono bg-gray-100 font-bold  relative text-black bg-white' role='navigation'>
+<nav class='flex justify-between items-center h-16 font-mono bg-gradient-to-r from-yellow-300 via-red-300 to-yellow-600 font-bold relative text-gray-900' role='navigation'>
     <a href="/" class='pl-8'>Navbar</a>
     <div class='px-4 cursor-pointer md:hidden'>
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
