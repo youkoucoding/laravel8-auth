@@ -4,11 +4,19 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <title>Laravel8-authentication-demo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+        }
+    </style>
+    <title>Airbnb Tailwind Laravel 8</title>
 </head>
 <body>
 <header
-    style="background-image: url('https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=3578&q=80')"
+    style="background-image: url('https://images.unsplash.com/photo-1542640244-7e672d6cef4e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80')"
     class="relative bg-no-repeat bg-cover lg:bg-center p-6 bg-top-right"
 >
     <a href="/">
@@ -29,51 +37,7 @@
         </h1>
     </a>
 
-{{--    <div class="max-w-5xl mx-auto lg:py-32 py-2">--}}
-{{--        <h2 class="lg:text-5xl text-4xl font-semibold text-white">--}}
-{{--            Book a trip. Host travals. All on Airbnb.--}}
-{{--        </h2>--}}
-{{--        <div--}}
-{{--            class="flex items-center flex-wrap justiy-start max-w-2xl lg:mx-0 mx-auto"--}}
-{{--        >--}}
-{{--            <div class="lg:pr-5 w-full lg:w-1/2 mb-4 lg:mb-0">--}}
-{{--                <p class="text-white mb-2 tracking-wide">--}}
-{{--                    Find places to stay and things to do.--}}
-{{--                </p>--}}
-{{--                <a--}}
-{{--                    href="#"--}}
-{{--                    class="transition bg-white px-10 py-3 rounded font-bold hover:bg-gray-300 block w-full text-center border-2 border-white"--}}
-{{--                >Explore</a--}}
-{{--                >--}}
-{{--            </div>--}}
-{{--            <div class="lg:pl-5 w-full lg:w-1/2">--}}
-{{--                <p class="text-white mb-2 tracking-wide">--}}
-{{--                    Earn money from your extra space.--}}
-{{--                </p>--}}
-{{--                <a--}}
-{{--                    href="#"--}}
-{{--                    class="transition bg-transparent px-10 py-3 rounded font-bold hover:bg-gray-300 block w-full text-center text-white hover:text-gray-800 border-2 border-white"--}}
-{{--                >Host</a--}}
-{{--                >--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
 </header>
-
-{{--<nav class='flex justify-between items-center h-16 font-mono bg-gradient-to-r from-yellow-300 via-red-300 to-yellow-600 font-bold relative text-gray-900' role='navigation'>--}}
-{{--    <a href="/" class='pl-8'>Navbar</a>--}}
-{{--    <div class='px-4 cursor-pointer md:hidden'>--}}
-{{--        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">--}}
-{{--            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>--}}
-{{--        </svg>--}}
-{{--    </div>--}}
-{{--    <div class="pr-8 md:block hidden">--}}
-{{--        <a href="{{URL("/")}}" class='p-4'>Home</a>--}}
-{{--        <a href="{{URL("/")}}" class='p-4'>Menu</a>--}}
-{{--        <a href="{{URL("/")}}" class='p-4'>About</a>--}}
-{{--        <a href="{{URL("/")}}" class='p-4'>Contact</a>--}}
-{{--    </div>--}}
-{{--</nav>--}}
 
 {{--template inhertence--}}
 <div class="mb-0 pb-0">

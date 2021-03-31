@@ -9,11 +9,17 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <title>Airbnb Tailwind!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+        }
+    </style>
+    <title>Airbnb Tailwind Laravel 8</title>
 </head>
 <body class="antialiased text-gray-800">
 <header
-    style="background-image: url('https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=3578&q=80')"
+    style="background-image: url('https://images.unsplash.com/photo-1542640244-7e672d6cef4e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80')"
     class="relative bg-no-repeat bg-cover lg:bg-center p-4 bg-top-right"
 >
     <a href="/">
@@ -34,33 +40,31 @@
         </h1>
     </a>
 
-    <div class="max-w-5xl mx-auto lg:py-24 py-2">
-        <h2 class="lg:text-5xl text-4xl font-semibold text-white">
-            Book a trip. Host travals. All on Airbnb.
+    <div class="max-w-5xl mx-auto lg:py-16 py-2">
+        <h2 class="lg:text-5xl text-4xl font-bold text-white">
+            Book a trip. Host travels.
         </h2>
         <div
-            class="flex items-center flex-wrap justiy-start max-w-2xl lg:mx-0 mx-auto"
+            class="flex items-center flex-wrap justify-start max-w-2xl lg:mx-0 mx-3"
         >
-            <div class="lg:pr-5 w-full lg:w-1/2 mb-4 lg:mb-0">
-                <p class="text-white mb-2 tracking-wide">
-                    Find places to stay and things to do.
-                </p>
+            <div class="lg:pr-5 w-full lg:w-1/2 lg:mb-0 mt-14">
+
                 <a
-                    href="#"
-                    class="transition bg-white px-10 py-3 rounded font-bold hover:bg-gray-300 block w-full text-center border-2 border-white"
-                >Explore</a
+                    href="{{route('auth.login')}}"
+                    class="transition bg-white px-10 py-3  rounded font-bold hover:bg-gray-300 block w-full text-center border-2 border-white"
+                >Login</a
                 >
             </div>
-            <div class="lg:pl-5 w-full lg:w-1/2">
-                <p class="text-white mb-2 tracking-wide">
-                    Earn money from your extra space.
-                </p>
+
+            <div class="lg:pl-5 w-full lg:w-1/2 mt-14">
+
                 <a
-                    href="#"
+                    href="{{route('auth.register')}}"
                     class="transition bg-transparent px-10 py-3 rounded font-bold hover:bg-gray-300 block w-full text-center text-white hover:text-gray-800 border-2 border-white"
-                >Host</a
+                >Register</a
                 >
             </div>
+
         </div>
     </div>
 </header>
@@ -70,31 +74,43 @@
         Book unique homes and experiences.
     </h3>
     <form action="#" class="lg:mb-16 mb-10">
+        @csrf
+
+        {{--check in--}}
         <div class="flex items-start justify-start flex-wrap">
-            <div class="lg:w-1/3 w-full lg:pr-2 mb-4 lg:mb-0">
-                <label for="where" class="label">Where</label>
-                <input
-                    type="text"
-                    class="input"
-                    id="where"
-                    placeholder="Anywhere"
-                />
-            </div>
-            <div class="lg:w-1/3 w-full lg:px-2 mb-4 lg:mb-0">
-                <label for="checkin_checkout" class="label"
-                >check in - check Out</label
+            <div class="lg:w-1/4 w-full lg:px-2 mb-4 lg:mb-0">
+                <label for="checkin"
+                >Check in</label
                 >
                 <input
-                    type="text"
-                    class="input"
+                    type="date"
+                    class="relative border border-gray-200 outline-none px-4 py-4 rounded-md hover:border-gray-400 focus:border-gray-400 md:col-span-2"
                     id="checkin_checkout"
-                    placeholder="yyyy/mm/dd - yyyy/mm/dd"
+                    placeholder="yyyy/mm/dd"
+
                 />
             </div>
-            <div class="lg:w-1/3 w-full lg:pl-2">
-                <label for="guests" class="label">Guests </label>
-                <div class="relative">
-                    <select id="guests" class="input select">
+
+            {{--check out--}}
+            <div class="lg:w-1/4 w-full lg:px-2 lg:mb-0">
+                <label for="checkin_checkout"
+                >Check Out </label
+                >
+                <input
+                    type="date"
+                    class="relative border border-gray-200 outline-none px-4 py-4 rounded-md hover:border-gray-400 focus:border-gray-400 md:col-span-2"
+                    id="checkin_checkout"
+                    placeholder="yyyy/mm/dd"
+                />
+            </div>
+
+            {{--guest numbers--}}
+            <div class="lg:w-1/4 w-full lg:pl-2 lg:mb-0">
+                <label for="guests">Guests </label>
+                <div
+                    class="relative border border-gray-200 outline-none px-4 py-4 rounded-md hover:border-gray-400 focus:border-gray-400 md:col-span-2"
+                >
+                    <select id="guests" name="guested">
                         <option value="1">1 guests</option>
                         <option value="2">2 guests</option>
                         <option value="3">3 guests</option>
@@ -104,10 +120,31 @@
                     ></div>
                 </div>
             </div>
+
+            {{--meal--}}
+            <div class="lg:w-1/4 w-full lg:pl-2 lg:mb-0">
+                <label for="dinner">Meals </label>
+
+                <div
+                    class="relative  outline-none px-4 py-4 rounded-md hover:border-gray-400 focus:border-gray-400 md:col-span-2"
+                >
+
+                    <label class="container m-3">
+                        <input type="checkbox" checked="checked">
+                        <span class="checkmark"></span>Breakfast
+                    </label>
+                    <label class="container m-3">
+                        <input type="checkbox">
+                        <span class="checkmark"></span>Dinner
+                    </label>
+                </div>
+
+            </div>
+
         </div>
     </form>
     <h3 class="font-bold bold text-2xl mb-4 leading-none">
-        What guests are saying about homes in there.
+        What guests are saying about homes in here.
     </h3>
     <div class="flex lg:items-center items-start">
         <svg
@@ -135,7 +172,7 @@
         <!-- card-1 -->
         <article class="lg:w-1/3 w/-full lg:pr-4 lg:mb-0 mb-6">
             <img
-                src="https://images.unsplash.com/photo-1534014963325-599a7fdebdf4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80"
+                src="https://images.unsplash.com/photo-1603111692119-c52e275031bc?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80"
                 alt="" class="object-cover rounded w-full"/>
             <div class="my-3 flex justify-start items-center">
                 <svg
@@ -190,7 +227,7 @@
             </p>
             <div class="flex items-center justify-start my-4">
                 <img
-                    src="11.jpg"
+                    src="https://images.unsplash.com/photo-1617187444233-1f7be7f052dc?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=905&q=80"
                     alt=""
                     class="w-12 h-12 rounded-full flex-shrink-0"
                 />
@@ -258,7 +295,7 @@
             </p>
             <div class="flex items-center justify-start my-4">
                 <img
-                    src="22.jpg"
+                    src="https://images.unsplash.com/photo-1611095567319-2f4c389168a9?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2551&q=80"
                     alt=""
                     class="w-12 h-12 rounded-full flex-shrink-0"
                 />
@@ -270,7 +307,9 @@
         </article>
         <!-- card-3 -->
         <article class="lg:w-1/3 w/-full lg:pl-4 lg:mb-0 mb-6">
-            <img src="https://images.unsplash.com/photo-1610375233775-6e0166927193?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2547&q=80" alt="" class="object-cover rounded w-full"/>
+            <img
+                src="https://images.unsplash.com/photo-1610375233775-6e0166927193?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2547&q=80"
+                alt="" class="object-cover rounded w-full"/>
             <div class="my-3 flex justify-start items-center">
                 <svg
                     class="fill-current w-4 h-4 text-cyan mr-1"
@@ -324,7 +363,7 @@
             </p>
             <div class="flex items-center justify-start my-4">
                 <img
-                    src="33.jpg"
+                    src="https://images.unsplash.com/photo-1612831456327-9be2ebcfb715?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80"
                     alt=""
                     class="w-12 h-12 rounded-full flex-shrink-0"
                 />

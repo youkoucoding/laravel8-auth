@@ -9,7 +9,7 @@
         </div>
         <div class="mt-16 relative max-w-2xl mx-auto">
             <div
-                class="absolute z-10 inset-0 bg-gradient-to-r from-yellow-300 via-red-500 to-blue-500 shadow-lg transform -skew-x-6 sm:skew-x-0 sm:-rotate-6 sm:rounded-lg"
+                class="absolute z-10 inset-0 bg-gradient-to-r from-yellow-300 via-red-500 to-gray-500 shadow-lg transform -skew-x-6 sm:skew-x-0 sm:-rotate-6 sm:rounded-lg"
             ></div>
             <div class="relative z-20 bg-white rounded-md shadow-md p-12 ">
                 <form action="{{route('auth.check')}}" method="POST">
@@ -51,7 +51,6 @@
                         >
                             Login
                         </button>
-
                         <a href="{{route('auth.register')}}" class="text-lg font-bold mr-8">Don't have a account?</a>
                     </div>
                 </form>
