@@ -68,6 +68,16 @@ class AuthController extends Controller
 
     public function dashboard()
     {
-        return view('admin.dashboard');
+        $data = ['LoggedUserInfo' => User::where('id', '=', session('LoggedUser'))->first()];
+        return view('admin.dashboard', $data);
+    }
+
+    public function logout()
+    {
+        if(session()->has('LoggedUser')) {
+            session()->pull('LoggedUser');
+            return redirect('auth/login');
+        }
+
     }
 }
