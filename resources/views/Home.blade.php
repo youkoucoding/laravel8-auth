@@ -1,132 +1,629 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <title>Airbnb Tailwind!</title>
+</head>
+<body class="antialiased text-gray-800">
+<header
+    style="background-image: url('https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=3578&q=80')"
+    class="relative bg-no-repeat bg-cover lg:bg-center p-4 bg-top-right"
+>
+    <a href="/">
+        <h1>
+            <span class="sr-only">AirBnb</span>
+            <svg
+                viewBox="0 0 1000 1000"
+                role="presentation"
+                aria-hidden="true"
+                focusable="false"
+                style="height: 32px; width: 32px; display: block; fill: #ffffff"
+            >
+                <title>AirBnb</title>
+                <path
+                    d="m499.3 736.7c-51-64-81-120.1-91-168.1-10-39-6-70 11-93 18-27 45-40 80-40s62 13 80 40c17 23 21 54 11 93-11 49-41 105-91 168.1zm362.2 43c-7 47-39 86-83 105-85 37-169.1-22-241.1-102 119.1-149.1 141.1-265.1 90-340.2-30-43-73-64-128.1-64-111 0-172.1 94-148.1 203.1 14 59 51 126.1 110 201.1-37 41-72 70-103 88-24 13-47 21-69 23-101 15-180.1-83-144.1-184.1 5-13 15-37 32-74l1-2c55-120.1 122.1-256.1 199.1-407.2l2-5 22-42c17-31 24-45 51-62 13-8 29-12 47-12 36 0 64 21 76 38 6 9 13 21 22 36l21 41 3 6c77 151.1 144.1 287.1 199.1 407.2l1 1 20 46 12 29c9.2 23.1 11.2 46.1 8.2 70.1zm46-90.1c-7-22-19-48-34-79v-1c-71-151.1-137.1-287.1-200.1-409.2l-4-6c-45-92-77-147.1-170.1-147.1-92 0-131.1 64-171.1 147.1l-3 6c-63 122.1-129.1 258.1-200.1 409.2v2l-21 46c-8 19-12 29-13 32-51 140.1 54 263.1 181.1 263.1 1 0 5 0 10-1h14c66-8 134.1-50 203.1-125.1 69 75 137.1 117.1 203.1 125.1h14c5 1 9 1 10 1 127.1.1 232.1-123 181.1-263.1z"
+                ></path>
+            </svg>
+        </h1>
+    </a>
 
-        <title>Laravel</title>
+    <div class="max-w-5xl mx-auto lg:py-24 py-2">
+        <h2 class="lg:text-5xl text-4xl font-semibold text-white">
+            Book a trip. Host travals. All on Airbnb.
+        </h2>
+        <div
+            class="flex items-center flex-wrap justiy-start max-w-2xl lg:mx-0 mx-auto"
+        >
+            <div class="lg:pr-5 w-full lg:w-1/2 mb-4 lg:mb-0">
+                <p class="text-white mb-2 tracking-wide">
+                    Find places to stay and things to do.
+                </p>
+                <a
+                    href="#"
+                    class="transition bg-white px-10 py-3 rounded font-bold hover:bg-gray-300 block w-full text-center border-2 border-white"
+                >Explore</a
+                >
+            </div>
+            <div class="lg:pl-5 w-full lg:w-1/2">
+                <p class="text-white mb-2 tracking-wide">
+                    Earn money from your extra space.
+                </p>
+                <a
+                    href="#"
+                    class="transition bg-transparent px-10 py-3 rounded font-bold hover:bg-gray-300 block w-full text-center text-white hover:text-gray-800 border-2 border-white"
+                >Host</a
+                >
+            </div>
+        </div>
+    </div>
+</header>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-
-        <!-- Styles -->
-        <style>
-            /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}a{background-color:transparent}[hidden]{display:none}html{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}*,:after,:before{box-sizing:border-box;border:0 solid #e2e8f0}a{color:inherit;text-decoration:inherit}svg,video{display:block;vertical-align:middle}video{max-width:100%;height:auto}.bg-white{--bg-opacity:1;background-color:#fff;background-color:rgba(255,255,255,var(--bg-opacity))}.bg-gray-100{--bg-opacity:1;background-color:#f7fafc;background-color:rgba(247,250,252,var(--bg-opacity))}.border-gray-200{--border-opacity:1;border-color:#edf2f7;border-color:rgba(237,242,247,var(--border-opacity))}.border-t{border-top-width:1px}.flex{display:flex}.grid{display:grid}.hidden{display:none}.items-center{align-items:center}.justify-center{justify-content:center}.font-semibold{font-weight:600}.h-5{height:1.25rem}.h-8{height:2rem}.h-16{height:4rem}.text-sm{font-size:.875rem}.text-lg{font-size:1.125rem}.leading-7{line-height:1.75rem}.mx-auto{margin-left:auto;margin-right:auto}.ml-1{margin-left:.25rem}.mt-2{margin-top:.5rem}.mr-2{margin-right:.5rem}.ml-2{margin-left:.5rem}.mt-4{margin-top:1rem}.ml-4{margin-left:1rem}.mt-8{margin-top:2rem}.ml-12{margin-left:3rem}.-mt-px{margin-top:-1px}.max-w-6xl{max-width:72rem}.min-h-screen{min-height:100vh}.overflow-hidden{overflow:hidden}.p-6{padding:1.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.pt-8{padding-top:2rem}.fixed{position:fixed}.relative{position:relative}.top-0{top:0}.right-0{right:0}.shadow{box-shadow:0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06)}.text-center{text-align:center}.text-gray-200{--text-opacity:1;color:#edf2f7;color:rgba(237,242,247,var(--text-opacity))}.text-gray-300{--text-opacity:1;color:#e2e8f0;color:rgba(226,232,240,var(--text-opacity))}.text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.text-gray-500{--text-opacity:1;color:#a0aec0;color:rgba(160,174,192,var(--text-opacity))}.text-gray-600{--text-opacity:1;color:#718096;color:rgba(113,128,150,var(--text-opacity))}.text-gray-700{--text-opacity:1;color:#4a5568;color:rgba(74,85,104,var(--text-opacity))}.text-gray-900{--text-opacity:1;color:#1a202c;color:rgba(26,32,44,var(--text-opacity))}.underline{text-decoration:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.w-5{width:1.25rem}.w-8{width:2rem}.w-auto{width:auto}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}@media (min-width:640px){.sm\:rounded-lg{border-radius:.5rem}.sm\:block{display:block}.sm\:items-center{align-items:center}.sm\:justify-start{justify-content:flex-start}.sm\:justify-between{justify-content:space-between}.sm\:h-20{height:5rem}.sm\:ml-0{margin-left:0}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:pt-0{padding-top:0}.sm\:text-left{text-align:left}.sm\:text-right{text-align:right}}@media (min-width:768px){.md\:border-t-0{border-top-width:0}.md\:border-l{border-left-width:1px}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width:1024px){.lg\:px-8{padding-left:2rem;padding-right:2rem}}@media (prefers-color-scheme:dark){.dark\:bg-gray-800{--bg-opacity:1;background-color:#2d3748;background-color:rgba(45,55,72,var(--bg-opacity))}.dark\:bg-gray-900{--bg-opacity:1;background-color:#1a202c;background-color:rgba(26,32,44,var(--bg-opacity))}.dark\:border-gray-700{--border-opacity:1;border-color:#4a5568;border-color:rgba(74,85,104,var(--border-opacity))}.dark\:text-white{--text-opacity:1;color:#fff;color:rgba(255,255,255,var(--text-opacity))}.dark\:text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}}
-        </style>
-
-        <style>
-            body {
-                font-family: 'Nunito', sans-serif;
-            }
-        </style>
-    </head>
-    <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline">Home</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Log in</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-                <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
-                    <svg viewBox="0 0 651 192" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto text-gray-700 sm:h-20">
-                        <g clip-path="url(#clip0)" fill="#EF3B2D">
-                            <path d="M248.032 44.676h-16.466v100.23h47.394v-14.748h-30.928V44.676zM337.091 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.431 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162-.001 2.863-.479 5.584-1.432 8.161zM463.954 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.432 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162 0 2.863-.479 5.584-1.432 8.161zM650.772 44.676h-15.606v100.23h15.606V44.676zM365.013 144.906h15.607V93.538h26.776V78.182h-42.383v66.724zM542.133 78.182l-19.616 51.096-19.616-51.096h-15.808l25.617 66.724h19.614l25.617-66.724h-15.808zM591.98 76.466c-19.112 0-34.239 15.706-34.239 35.079 0 21.416 14.641 35.079 36.239 35.079 12.088 0 19.806-4.622 29.234-14.688l-10.544-8.158c-.006.008-7.958 10.449-19.832 10.449-13.802 0-19.612-11.127-19.612-16.884h51.777c2.72-22.043-11.772-40.877-33.023-40.877zm-18.713 29.28c.12-1.284 1.917-16.884 18.589-16.884 16.671 0 18.697 15.598 18.813 16.884h-37.402zM184.068 43.892c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002-35.648-20.524a2.971 2.971 0 00-2.964 0l-35.647 20.522-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v38.979l-29.706 17.103V24.493a3 3 0 00-.103-.776c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002L40.098 1.396a2.971 2.971 0 00-2.964 0L1.487 21.919l-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v122.09c0 1.063.568 2.044 1.489 2.575l71.293 41.045c.156.089.324.143.49.202.078.028.15.074.23.095a2.98 2.98 0 001.524 0c.069-.018.132-.059.2-.083.176-.061.354-.119.519-.214l71.293-41.045a2.971 2.971 0 001.489-2.575v-38.979l34.158-19.666a2.971 2.971 0 001.489-2.575V44.666a3.075 3.075 0 00-.106-.774zM74.255 143.167l-29.648-16.779 31.136-17.926.001-.001 34.164-19.669 29.674 17.084-21.772 12.428-43.555 24.863zm68.329-76.259v33.841l-12.475-7.182-17.231-9.92V49.806l12.475 7.182 17.231 9.92zm2.97-39.335l29.693 17.095-29.693 17.095-29.693-17.095 29.693-17.095zM54.06 114.089l-12.475 7.182V46.733l17.231-9.92 12.475-7.182v74.537l-17.231 9.921zM38.614 7.398l29.693 17.095-29.693 17.095L8.921 24.493 38.614 7.398zM5.938 29.632l12.475 7.182 17.231 9.92v79.676l.001.005-.001.006c0 .114.032.221.045.333.017.146.021.294.059.434l.002.007c.032.117.094.222.14.334.051.124.088.255.156.371a.036.036 0 00.004.009c.061.105.149.191.222.288.081.105.149.22.244.314l.008.01c.084.083.19.142.284.215.106.083.202.178.32.247l.013.005.011.008 34.139 19.321v34.175L5.939 144.867V29.632h-.001zm136.646 115.235l-65.352 37.625V148.31l48.399-27.628 16.953-9.677v33.862zm35.646-61.22l-29.706 17.102V66.908l17.231-9.92 12.475-7.182v33.841z"/>
-                        </g>
-                    </svg>
-                </div>
-
-                <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
-                    <div class="grid grid-cols-1 md:grid-cols-2">
-                        <div class="p-6">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel.com/docs" class="underline text-gray-900 dark:text-white">Documentation</a></div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel has wonderful, thorough documentation covering every aspect of the framework. Whether you are new to the framework or have previous experience with Laravel, we recommend reading all of the documentation from beginning to end.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laracasts.com" class="underline text-gray-900 dark:text-white">Laracasts</a></div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel-news.com/" class="underline text-gray-900 dark:text-white">Laravel News</a></div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-l">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold text-gray-900 dark:text-white">Vibrant Ecosystem</div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="underline">Forge</a>, <a href="https://vapor.laravel.com" class="underline">Vapor</a>, <a href="https://nova.laravel.com" class="underline">Nova</a>, and <a href="https://envoyer.io" class="underline">Envoyer</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="underline">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="underline">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="underline">Echo</a>, <a href="https://laravel.com/docs/horizon" class="underline">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="underline">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="underline">Telescope</a>, and more.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
-                    <div class="text-center text-sm text-gray-500 sm:text-left">
-                        <div class="flex items-center">
-                            <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor" class="-mt-px w-5 h-5 text-gray-400">
-                                <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                            </svg>
-
-                            <a href="https://laravel.bigcartel.com" class="ml-1 underline">
-                                Shop
-                            </a>
-
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="ml-4 -mt-px w-5 h-5 text-gray-400">
-                                <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                            </svg>
-
-                            <a href="https://github.com/sponsors/taylorotwell" class="ml-1 underline">
-                                Sponsor
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
-                    </div>
+<div class="max-w-5xl mx-auto lg:py-16 py-12 lg:px-0 px-4">
+    <h3 class="font-bold bold text-2xl mb-4 leading-none">
+        Book unique homes and experiences.
+    </h3>
+    <form action="#" class="lg:mb-16 mb-10">
+        <div class="flex items-start justify-start flex-wrap">
+            <div class="lg:w-1/3 w-full lg:pr-2 mb-4 lg:mb-0">
+                <label for="where" class="label">Where</label>
+                <input
+                    type="text"
+                    class="input"
+                    id="where"
+                    placeholder="Anywhere"
+                />
+            </div>
+            <div class="lg:w-1/3 w-full lg:px-2 mb-4 lg:mb-0">
+                <label for="checkin_checkout" class="label"
+                >check in - check Out</label
+                >
+                <input
+                    type="text"
+                    class="input"
+                    id="checkin_checkout"
+                    placeholder="yyyy/mm/dd - yyyy/mm/dd"
+                />
+            </div>
+            <div class="lg:w-1/3 w-full lg:pl-2">
+                <label for="guests" class="label">Guests </label>
+                <div class="relative">
+                    <select id="guests" class="input select">
+                        <option value="1">1 guests</option>
+                        <option value="2">2 guests</option>
+                        <option value="3">3 guests</option>
+                    </select>
+                    <div
+                        class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
+                    ></div>
                 </div>
             </div>
         </div>
-    </body>
+    </form>
+    <h3 class="font-bold bold text-2xl mb-4 leading-none">
+        What guests are saying about homes in there.
+    </h3>
+    <div class="flex lg:items-center items-start">
+        <svg
+            class="w-4 h-4 flex-shrink-0"
+            viewBox="0 0 24 24"
+            role="presentation"
+            aria-hidden="true"
+            focusable="false"
+            style="height: 24px; width: 24px; fill: #ffb400"
+        >
+            <path
+                d="m21.95 9.48a.84.84 0 0 0 -.87-.48h-4.62a.5.5 0 0 0 0 1l4.14.01-4.81 4.17a.5.5 0 0 0 -.14.57l2.65 6.38-6.07-3.72a.5.5 0 0 0 -.52 0l-6.08 3.72 2.65-6.37a.5.5 0 0 0 -.13-.57l-4.75-4.18h5.75a.5.5 0 0 0 .46-.3l2.37-5.37 1.58 3.57a.5.5 0 0 0 .91-.41l-1.72-3.88a.8.8 0 0 0 -1.56-.01l-2.38 5.39h-5.9a.83.83 0 0 0 -.87.48.85.85 0 0 0 .32.96l4.85 4.25-2.78 6.67a.81.81 0 0 0 .16.98.66.66 0 0 0 .43.15 1.1 1.1 0 0 0 .56-.18l6.37-3.91 6.38 3.92a.81.81 0 0 0 .99.03c.15-.12.37-.41.15-1l-2.77-6.66 4.92-4.26a.84.84 0 0 0 .31-.95zm-.78.53h-.01"
+                fill="#484848"
+            ></path>
+            <path
+                d="m11 21.5a.5.5 0 1 1 -.5-.5.5.5 0 0 1 .5.5zm-3.5-15.5a.5.5 0 1 0 .5.5.5.5 0 0 0 -.5-.5zm15 10h-.5v-.5a.5.5 0 0 0 -1 0v .5h-.5a.5.5 0 0 0 0 1h .5v.5a.5.5 0 0 0 1 0v-.5h.5a.5.5 0 0 0 0-1zm-15-13h-.5v-.5a.5.5 0 0 0 -1 0v .5h-.5a.5.5 0 0 0 0 1h .5v.5a.5.5 0 0 0 1 0v-.5h.5a.5.5 0 0 0 0-1zm10.22 7.54a.84.84 0 0 0 -.17-.02q-.28-.01-3.19 0a .6.6 0 0 1 -.55-.35l-1.5-3.23a.42.42 0 0 0 -.75 0l-1.81 4.14a2.92 2.92 0 0 0 4.12 3.72l.46-.26 3.49-2.99.16-.18a.5.5 0 0 0 -.26-.82z"
+            ></path>
+        </svg>
+        <p class="pl-2">
+            Japanese homes were <strong>rated 4.8 out of 5 stars</strong> with
+            <strong>42,500,000+ reviews</strong>
+        </p>
+    </div>
+    <section class="flex items-start flex-wrap justify-between lg:my-10 my-6">
+        <!-- card-1 -->
+        <article class="lg:w-1/3 w/-full lg:pr-4 lg:mb-0 mb-6">
+            <img
+                src="https://images.unsplash.com/photo-1534014963325-599a7fdebdf4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80"
+                alt="" class="object-cover rounded w-full"/>
+            <div class="my-3 flex justify-start items-center">
+                <svg
+                    class="fill-current w-4 h-4 text-cyan mr-1"
+                    viewBox="0 0 1000 1000"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M972 380c9 28 2 50-20 67L725 619l87 280c11 39-18 75-54 75-12 0-23-4-33-12L499 790 273 962a58 58 0 0 1-78-12 50 50 0 0 1-8-51l86-278L46 447c-21-17-28-39-19-67 8-24 29-40 52-40h280l87-279c7-23 28-39 52-39 25 0 47 17 54 41l87 277h280c24 0 45 16 53 40z"
+                    />
+                </svg>
+                <svg
+                    class="fill-current w-4 h-4 text-cyan mr-1"
+                    viewBox="0 0 1000 1000"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M972 380c9 28 2 50-20 67L725 619l87 280c11 39-18 75-54 75-12 0-23-4-33-12L499 790 273 962a58 58 0 0 1-78-12 50 50 0 0 1-8-51l86-278L46 447c-21-17-28-39-19-67 8-24 29-40 52-40h280l87-279c7-23 28-39 52-39 25 0 47 17 54 41l87 277h280c24 0 45 16 53 40z"
+                    />
+                </svg>
+                <svg
+                    class="fill-current w-4 h-4 text-cyan mr-1"
+                    viewBox="0 0 1000 1000"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M972 380c9 28 2 50-20 67L725 619l87 280c11 39-18 75-54 75-12 0-23-4-33-12L499 790 273 962a58 58 0 0 1-78-12 50 50 0 0 1-8-51l86-278L46 447c-21-17-28-39-19-67 8-24 29-40 52-40h280l87-279c7-23 28-39 52-39 25 0 47 17 54 41l87 277h280c24 0 45 16 53 40z"
+                    />
+                </svg>
+                <svg
+                    class="fill-current w-4 h-4 text-cyan mr-1"
+                    viewBox="0 0 1000 1000"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M972 380c9 28 2 50-20 67L725 619l87 280c11 39-18 75-54 75-12 0-23-4-33-12L499 790 273 962a58 58 0 0 1-78-12 50 50 0 0 1-8-51l86-278L46 447c-21-17-28-39-19-67 8-24 29-40 52-40h280l87-279c7-23 28-39 52-39 25 0 47 17 54 41l87 277h280c24 0 45 16 53 40z"
+                    />
+                </svg>
+                <svg
+                    class="fill-current w-4 h-4 text-cyan mr-1"
+                    viewBox="0 0 1000 1000"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M972 380c9 28 2 50-20 67L725 619l87 280c11 39-18 75-54 75-12 0-23-4-33-12L499 790 273 962a58 58 0 0 1-78-12 50 50 0 0 1-8-51l86-278L46 447c-21-17-28-39-19-67 8-24 29-40 52-40h280l87-279c7-23 28-39 52-39 25 0 47 17 54 41l87 277h280c24 0 45 16 53 40z"
+                    />
+                </svg>
+            </div>
+            <p class="text-gray-700 font-light text-sm leading-snug">
+                What a wonderful little cottage! More spacious and adorable than the
+                picture show. We never met our hosts,but we felt welcome and ...
+            </p>
+            <div class="flex items-center justify-start my-4">
+                <img
+                    src="11.jpg"
+                    alt=""
+                    class="w-12 h-12 rounded-full flex-shrink-0"
+                />
+                <div class="flex-1 pl-4 text-sm">
+                    <p class="font-semibold leading-none">Taro</p>
+                    <p>Japan</p>
+                </div>
+            </div>
+        </article>
+        <!-- card-2 -->
+        <article class="lg:w-1/3 w/-full lg:px-2 lg:mb-0 mb-6">
+            <img
+                src="https://images.unsplash.com/photo-1614301246509-d1fc7d78b6b6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80"
+                alt="" class="object-cover rounded w-full"/>
+            <div class="my-3 flex justify-start items-center">
+                <svg
+                    class="fill-current w-4 h-4 text-cyan mr-1"
+                    viewBox="0 0 1000 1000"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M972 380c9 28 2 50-20 67L725 619l87 280c11 39-18 75-54 75-12 0-23-4-33-12L499 790 273 962a58 58 0 0 1-78-12 50 50 0 0 1-8-51l86-278L46 447c-21-17-28-39-19-67 8-24 29-40 52-40h280l87-279c7-23 28-39 52-39 25 0 47 17 54 41l87 277h280c24 0 45 16 53 40z"
+                    />
+                </svg>
+                <svg
+                    class="fill-current w-4 h-4 text-cyan mr-1"
+                    viewBox="0 0 1000 1000"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M972 380c9 28 2 50-20 67L725 619l87 280c11 39-18 75-54 75-12 0-23-4-33-12L499 790 273 962a58 58 0 0 1-78-12 50 50 0 0 1-8-51l86-278L46 447c-21-17-28-39-19-67 8-24 29-40 52-40h280l87-279c7-23 28-39 52-39 25 0 47 17 54 41l87 277h280c24 0 45 16 53 40z"
+                    />
+                </svg>
+                <svg
+                    class="fill-current w-4 h-4 text-cyan mr-1"
+                    viewBox="0 0 1000 1000"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M972 380c9 28 2 50-20 67L725 619l87 280c11 39-18 75-54 75-12 0-23-4-33-12L499 790 273 962a58 58 0 0 1-78-12 50 50 0 0 1-8-51l86-278L46 447c-21-17-28-39-19-67 8-24 29-40 52-40h280l87-279c7-23 28-39 52-39 25 0 47 17 54 41l87 277h280c24 0 45 16 53 40z"
+                    />
+                </svg>
+                <svg
+                    class="fill-current w-4 h-4 text-cyan mr-1"
+                    viewBox="0 0 1000 1000"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M972 380c9 28 2 50-20 67L725 619l87 280c11 39-18 75-54 75-12 0-23-4-33-12L499 790 273 962a58 58 0 0 1-78-12 50 50 0 0 1-8-51l86-278L46 447c-21-17-28-39-19-67 8-24 29-40 52-40h280l87-279c7-23 28-39 52-39 25 0 47 17 54 41l87 277h280c24 0 45 16 53 40z"
+                    />
+                </svg>
+                <svg
+                    class="fill-current w-4 h-4 text-cyan mr-1"
+                    viewBox="0 0 1000 1000"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M972 380c9 28 2 50-20 67L725 619l87 280c11 39-18 75-54 75-12 0-23-4-33-12L499 790 273 962a58 58 0 0 1-78-12 50 50 0 0 1-8-51l86-278L46 447c-21-17-28-39-19-67 8-24 29-40 52-40h280l87-279c7-23 28-39 52-39 25 0 47 17 54 41l87 277h280c24 0 45 16 53 40z"
+                    />
+                </svg>
+            </div>
+            <p class="text-gray-700 font-light text-sm leading-snug">
+                What a wonderful little cottage! More spacious and adorable than the
+                picture show. We never met our hosts,but we felt welcome and ...
+            </p>
+            <div class="flex items-center justify-start my-4">
+                <img
+                    src="22.jpg"
+                    alt=""
+                    class="w-12 h-12 rounded-full flex-shrink-0"
+                />
+                <div class="flex-1 pl-4 text-sm">
+                    <p class="font-semibold leading-none">hanako</p>
+                    <p>Japan</p>
+                </div>
+            </div>
+        </article>
+        <!-- card-3 -->
+        <article class="lg:w-1/3 w/-full lg:pl-4 lg:mb-0 mb-6">
+            <img src="https://images.unsplash.com/photo-1610375233775-6e0166927193?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2547&q=80" alt="" class="object-cover rounded w-full"/>
+            <div class="my-3 flex justify-start items-center">
+                <svg
+                    class="fill-current w-4 h-4 text-cyan mr-1"
+                    viewBox="0 0 1000 1000"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M972 380c9 28 2 50-20 67L725 619l87 280c11 39-18 75-54 75-12 0-23-4-33-12L499 790 273 962a58 58 0 0 1-78-12 50 50 0 0 1-8-51l86-278L46 447c-21-17-28-39-19-67 8-24 29-40 52-40h280l87-279c7-23 28-39 52-39 25 0 47 17 54 41l87 277h280c24 0 45 16 53 40z"
+                    />
+                </svg>
+                <svg
+                    class="fill-current w-4 h-4 text-cyan mr-1"
+                    viewBox="0 0 1000 1000"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M972 380c9 28 2 50-20 67L725 619l87 280c11 39-18 75-54 75-12 0-23-4-33-12L499 790 273 962a58 58 0 0 1-78-12 50 50 0 0 1-8-51l86-278L46 447c-21-17-28-39-19-67 8-24 29-40 52-40h280l87-279c7-23 28-39 52-39 25 0 47 17 54 41l87 277h280c24 0 45 16 53 40z"
+                    />
+                </svg>
+                <svg
+                    class="fill-current w-4 h-4 text-cyan mr-1"
+                    viewBox="0 0 1000 1000"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M972 380c9 28 2 50-20 67L725 619l87 280c11 39-18 75-54 75-12 0-23-4-33-12L499 790 273 962a58 58 0 0 1-78-12 50 50 0 0 1-8-51l86-278L46 447c-21-17-28-39-19-67 8-24 29-40 52-40h280l87-279c7-23 28-39 52-39 25 0 47 17 54 41l87 277h280c24 0 45 16 53 40z"
+                    />
+                </svg>
+                <svg
+                    class="fill-current w-4 h-4 text-cyan mr-1"
+                    viewBox="0 0 1000 1000"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M972 380c9 28 2 50-20 67L725 619l87 280c11 39-18 75-54 75-12 0-23-4-33-12L499 790 273 962a58 58 0 0 1-78-12 50 50 0 0 1-8-51l86-278L46 447c-21-17-28-39-19-67 8-24 29-40 52-40h280l87-279c7-23 28-39 52-39 25 0 47 17 54 41l87 277h280c24 0 45 16 53 40z"
+                    />
+                </svg>
+                <svg
+                    class="fill-current w-4 h-4 text-cyan mr-1"
+                    viewBox="0 0 1000 1000"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M972 380c9 28 2 50-20 67L725 619l87 280c11 39-18 75-54 75-12 0-23-4-33-12L499 790 273 962a58 58 0 0 1-78-12 50 50 0 0 1-8-51l86-278L46 447c-21-17-28-39-19-67 8-24 29-40 52-40h280l87-279c7-23 28-39 52-39 25 0 47 17 54 41l87 277h280c24 0 45 16 53 40z"
+                    />
+                </svg>
+            </div>
+            <p class="text-gray-700 font-light text-sm leading-snug">
+                What a wonderful little cottage! More spacious and adorable than the
+                picture show. We never met our hosts,but we felt welcome and ...
+            </p>
+            <div class="flex items-center justify-start my-4">
+                <img
+                    src="33.jpg"
+                    alt=""
+                    class="w-12 h-12 rounded-full flex-shrink-0"
+                />
+                <div class="flex-1 pl-4 text-sm">
+                    <p class="font-semibold leading-none">yuri</p>
+                    <p>Japan</p>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <h3
+        class="font-bold bold text-2xl lg:mb-2 mb-4 leading-none pb-4 border-b border-gray-300"
+    >
+        Traveling with Airbnb
+    </h3>
+    <section
+        class="flex flex-wrap items-start justify-between lg:mb-8 mb-6 border-b border-gray-300 pb-8"
+    >
+        <div class="lg:w-1/3 w-full lg:pr-4 lg:mb-0 mb-6">
+            <svg
+                class="w-8 h-8"
+                viewBox="0 0 24 24"
+                fill="#60B6B5"
+                fill-opacity="0"
+                stroke="#60B6B5"
+                stroke-width="1"
+                focusable="false"
+                aria-hidden="true"
+                role="presentation"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            >
+                <path
+                    d="m17.5 2.9c-2.1 0-4.1 1.3-5.4 2.8-1.6-1.6-3.8-3.2-6.2-2.7-1.5.2-2.9 1.2-3.6 2.6-2.3 4.1 1 8.3 3.9 11.1 1.4 1.3 2.8 2.5 4.3 3.6.4.3 1.1.9 1.6.9s1.2-.6 1.6-.9c3.2-2.3 6.6-5.1 8.2-8.8 1.5-3.4 0-8.6-4.4-8.6"
+                    stroke-linejoin="round"
+                ></path>
+            </svg>
+            <p class="font-bold mt-3 mb-1">7/24 Customer Support</p>
+            <p class="text-gray-700 font-light text-sm leading-snug">
+                Day or night, we're here for you. Talk to our support team from any
+                where in the world, any hour of day.
+            </p>
+        </div>
+        <div class="lg:w-1/3 w-full lg:px-2 lg:mb-0 mb-6">
+            <svg
+                class="w-8 h-8"
+                viewBox="0 0 24 24"
+                role="presentation"
+                aria-hidden="true"
+                focusable="false"
+                fill="#60B6B5"
+            >
+                <path
+                    d="m23.57 11.4-1.75-1.76-3.85-3.87-1.78-1.79-2.7-2.71-.82-.83-.22-.23-.06-.06c-.22-.22-.53-.22-.73-.02l-1.75 1.76-3.85 3.87-3.85 3.87-1.75 1.76a1.49 1.49 0 0 0 -.44 1.05v.01c0 .38.15.77.44 1.06l.55.55a1.49 1.49 0 0 0 2.01.08v8.4c0 .81.68 1.45 1.5 1.45h15c .82 0 1.5-.65 1.5-1.45v-8.4c.59.49 1.45.47 2.01-.08l.55-.55c.29-.29.44-.68.44-1.06v-.01c0-.38-.14-.77-.44-1.06zm-3.57 11.16c0 .24-.22.45-.5.45h-15c-.28 0-.5-.21-.5-.45v-9.36l8-7.99 8 7.99zm2.85-9.74-.55.55c-.2.2-.52.2-.71.01l-9.24-9.22a.5.5 0 0 0 -.71 0l-9.24 9.22a.5.5 0 0 1 -.71-.01l-.55-.55a.5.5 0 0 1 -.01-.71l1.75-1.76 3.85-3.87 3.85-3.87 1.4-1.4.77.77 2.7 2.71 1.78 1.79 3.85 3.87 1.75 1.76a.51.51 0 0 1 -.01.71z"
+                    fill-rule="evenodd"
+                ></path>
+            </svg>
+            <p class="font-bold mt-3 mb-1">Global hospitality standards</p>
+            <p class="text-gray-700 font-light text-sm leading-snug">
+                Guests review their hosts after each stay. All hosts must maintain a
+                minimum rating and our hospitality standards to be on airbnb.
+            </p>
+        </div>
+        <div class="lg:w-1/3 w-full lg:pl-4">
+            <svg
+                class="w-8 h-8"
+                viewBox="0 0 24 24"
+                role="presentation"
+                aria-hidden="true"
+                focusable="false"
+                fill="#60B6B5"
+            >
+                <path
+                    d="m15.37 13.54-.01.01a.53.53 0 0 0 .01-.01m-.37 9.46h-11.5c-.28 0-.9-.22-1.38-.58-.71-.52-1.12-1.31-1.12-2.42 0-.04 0-.07.01-.11.09-1.1 1.59-2.44 4.02-3.79a33.14 33.14 0 0 1 2.9-1.42 35.57 35.57 0 0 1 1.31-.54c.63-.26.71-.95.18-1.35a4.55 4.55 0 0 1 -.38-.31 7.1 7.1 0 0 1 -.84-.9c-.73-.92-1.17-1.96-1.2-3.09v-2.99c.07-2.36 2.38-4.5 5.04-4.5 2.67 0 4.96 2.14 4.96 4.5v3c0 1.13-.43 2.17-1.15 3.11a7.35 7.35 0 0 1 -1.09 1.13l-.08.07c-.02.02-.02.02-.05.05s-.03.03-.09.14c-.05.47-.05.47.46.7a.49.49 0 0 0 .36-.15l.06-.05a8.32 8.32 0 0 0 1.23-1.28c.84-1.1 1.35-2.35 1.35-3.72v-3c0-2.92-2.75-5.5-5.96-5.5-3.2 0-5.96 2.56-6.04 5.49v3.01c.03 1.38.56 2.62 1.42 3.71.31.39.63.73.96 1.03.06.05.1.08.15.12a34.28 34.28 0 0 0 -3.98 1.87c-2.73 1.51-4.41 3.02-4.54 4.58a2.41 2.41 0 0 0 -.01.19c0 2.55 1.91 3.99 3.5 4h11.5a.5.5 0 1 0 0-1m7.67-4.22c-.36.74-.97 1.55-1.78 2.38a20.33 20.33 0 0 1 -1.89 1.71 19.94 19.94 0 0 1 -1.89-1.71c-.81-.83-1.42-1.64-1.78-2.38-.22-.45-.33-.86-.33-1.23 0-.99.61-1.56 1.43-1.56.7 0 1.55.53 2.18 1.31a.5.5 0 0 0 .78 0c .63-.78 1.48-1.31 2.18-1.31.82 0 1.43.57 1.43 1.56 0 .36-.11.77-.33 1.23m-1.1-3.78c-.89 0-1.82.5-2.57 1.25-.75-.76-1.68-1.25-2.57-1.25-1.36 0-2.43 1.01-2.43 2.56 0 .53.15 1.08.43 1.66.41.85 1.09 1.74 1.96 2.64a21.09 21.09 0 0 0 2.31 2.05.5.5 0 0 0 .6 0 20.91 20.91 0 0 0 2.31-2.05c.87-.9 1.55-1.79 1.96-2.64.28-.58.43-1.13.43-1.66 0-1.55-1.07-2.56-2.43-2.56"
+                    fill-rule="evenodd"
+                ></path>
+            </svg>
+            <p class="font-bold mt-3 mb-1">5 stars hosts</p>
+            <p class="text-gray-700 font-light text-sm leading-snug">
+                From fresh-pressed sheets to tips on where to get the best brunch,
+                our hosts are full of local hospitality.
+            </p>
+        </div>
+    </section>
+
+</div>
+<footer class="border-t bg-gray-100 border-gray-300 py-10 text-sm">
+    <div
+        class="max-w-5xl mx-auto pb-8 mb-6 border-b border-gray-300 px-4 lg:px-0"
+    >
+        <div class="flex flex-wrap items-start justify-start">
+            <div class="lg:w-1/4 w-full lg:mb-0 mb-6">
+                <h5 class="font-semibold text-gray-700 mb-2">Airbnb</h5>
+                <ul class="leading-loose">
+                    <li>
+                        <a class="text-gray-600 hover:underline font-semibold" href="#"
+                        >Careers</a
+                        >
+                    </li>
+                    <li>
+                        <a class="text-gray-600 hover:underline font-semibold" href="#"
+                        >News</a
+                        >
+                    </li>
+                    <li>
+                        <a class="text-gray-600 hover:underline font-semibold" href="#"
+                        >Policies</a
+                        >
+                    </li>
+                    <li>
+                        <a class="text-gray-600 hover:underline font-semibold" href="#"
+                        >Help</a
+                        >
+                    </li>
+                    <li>
+                        <a class="text-gray-600 hover:underline font-semibold" href="#"
+                        >Diversity & Belonging</a
+                        >
+                    </li>
+                </ul>
+            </div>
+            <div class="lg:w-1/4 w-full lg:mb-0 mb-6">
+                <h5 class="font-semibold text-gray-700 mb-2">Discover</h5>
+                <ul class="leading-loose">
+                    <li>
+                        <a class="text-gray-600 hover:underline font-semibold" href="#"
+                        >Trust &amp; Safety</a
+                        >
+                    </li>
+                    <li>
+                        <a class="text-gray-600 hover:underline font-semibold" href="#"
+                        >Travel Credit</a
+                        >
+                    </li>
+                    <li>
+                        <a class="text-gray-600 hover:underline font-semibold" href="#"
+                        >Gift Cards</a
+                        >
+                    </li>
+                    <li>
+                        <a class="text-gray-600 hover:underline font-semibold" href="#"
+                        >Airbnb Citizen</a
+                        >
+                    </li>
+                    <li>
+                        <a class="text-gray-600 hover:underline font-semibold" href="#"
+                        >Business Travel</a
+                        >
+                    </li>
+                    <li class="flex">
+                        <a href="#" class="text-gray-600 hover:underline font-semibold"
+                        >Things To Do</a
+                        >
+                        <span
+                            class="bg-cyan px-1 inline-flex items-center h-5 text-white rounded ml-1 mt-1 inline-block bg-black text-xs"
+                        >New</span
+                        >
+                    </li>
+                    <li>
+                        <a class="text-gray-600 hover:underline font-semibold" href="#"
+                        >Airbnbmag</a
+                        >
+                    </li>
+                </ul>
+            </div>
+            <div class="lg:w-1/4 w-full lg:mb-0 mb-6">
+                <h5 class="font-semibold text-gray-700 mb-2">Hosting</h5>
+                <ul class="leading-loose">
+                    <li>
+                        <a class="text-gray-600 hover:underline font-semibold" href="#"
+                        >Why Host</a
+                        >
+                    </li>
+                    <li>
+                        <a class="text-gray-600 hover:underline font-semibold" href="#"
+                        >Hospitality</a
+                        >
+                    </li>
+                    <li>
+                        <a class="text-gray-600 hover:underline font-semibold" href="#"
+                        >Responsible Hosting</a
+                        >
+                    </li>
+                    <li>
+                        <a class="text-gray-600 hover:underline font-semibold" href="#"
+                        >Community Center</a
+                        >
+                    </li>
+                    <li class="flex">
+                        <a class="text-gray-600 hover:underline font-semibold" href="#"
+                        >Host an Experience</a
+                        >
+                        <span
+                            class="bg-cyan px-1 inline-flex items-center h-5 text-white rounded ml-1 mt-1 inline-block bg-black text-xs"
+                        >New</span
+                        >
+                    </li>
+                    <li>
+                        <a class="text-gray-600 hover:underline font-semibold" href="#"
+                        >Open Homes</a
+                        >
+                    </li>
+                    <li class="flex">
+                        <a href="#" class="text-gray-600 hover:underline font-semibold"
+                        >Donations</a
+                        >
+                        <span
+                            class="bg-cyan px-1 inline-flex items-center h-5 text-white rounded ml-1 mt-1 inline-block bg-black text-xs"
+                        >New</span
+                        >
+                    </li>
+                </ul>
+            </div>
+            <div class="lg:w-1/4 w-full">
+                <div class="flex items-baseline justify-start mb-2">
+                    <a href="#" class="mr-2">
+                        <svg
+                            viewBox="0 0 32 32"
+                            role="img"
+                            aria-label="Navigate to Facebook"
+                            focusable="false"
+                            class="text-gray-600 fill-current w-4 h-4"
+                        >
+                            <path
+                                d="m8 14.41v-4.17c0-.42.35-.81.77-.81h2.52v-2.08c0-4.84 2.48-7.31 7.42-7.35 1.65 0 3.22.21 4.69.64.46.14.63.42.6.88l-.56 4.06c-.04.18-.14.35-.32.53-.21.11-.42.18-.63.14-.88-.25-1.78-.35-2.8-.35-1.4 0-1.61.28-1.61 1.73v1.8h4.52c.42 0 .81.42.81.88l-.35 4.17c0 .42-.35.71-.77.71h-4.21v16c0 .42-.35.81-.77.81h-5.21c-.42 0-.8-.39-.8-.81v-16h-2.52a.78.78 0 0 1 -.78-.78"
+                                fill-rule="evenodd"
+                            ></path>
+                        </svg
+                        >
+                    </a>
+
+                    <a href="#" class="mr-2">
+                        <svg
+                            class="text-gray-600 fill-current w-4 h-4"
+                            viewBox="0 0 32 32"
+                            role="img"
+                            aria-label="Navigate to Twitter"
+                            focusable="false"
+                        >
+                            <path
+                                d="m31 6.36c-1.16.49-2.32.82-3.55.95 1.29-.76 2.22-1.87 2.72-3.38a13.05 13.05 0 0 1 -3.91 1.51c-1.23-1.28-2.75-1.94-4.51-1.94-3.41 0-6.17 2.73-6.17 6.12 0 .49.07.95.17 1.38-4.94-.23-9.51-2.6-12.66-6.38-.56.95-.86 1.97-.86 3.09 0 2.07 1.03 3.91 2.75 5.06-1-.03-1.92-.3-2.82-.76v.07c0 2.89 2.12 5.42 4.94 5.98-.63.17-1.16.23-1.62.23-.3 0-.7-.03-1.13-.13a6.07 6.07 0 0 0 5.74 4.24c-2.22 1.74-4.78 2.63-7.66 2.63-.56 0-1.06-.03-1.43-.1 2.85 1.84 6 2.76 9.41 2.76 7.29 0 12.83-4.01 15.51-9.3 1.36-2.66 2.02-5.36 2.02-8.09v-.46c-.03-.17-.03-.3-.03-.33a12.66 12.66 0 0 0 3.09-3.16"
+                                fill-rule="evenodd"
+                            ></path>
+                        </svg>
+                    </a>
+
+                    <a href="#">
+                        <svg
+                            viewBox="0 0 24 24"
+                            role="img"
+                            aria-label="Navigate to Instagram"
+                            focusable="false"
+                            class="text-gray-600 fill-current w-4 h-4"
+                        >
+                            <path
+                                d="m23.09.91c-.61-.61-1.33-.91-2.17-.91h-17.84c-.85 0-1.57.3-2.17.91s-.91 1.33-.91 2.17v17.84c0 .85.3 1.57.91 2.17s1.33.91 2.17.91h17.84c.85 0 1.57-.3 2.17-.91s.91-1.33.91-2.17v-17.84c0-.85-.3-1.57-.91-2.17zm-14.48 7.74c.94-.91 2.08-1.37 3.4-1.37 1.33 0 2.47.46 3.41 1.37s1.41 2.01 1.41 3.3-.47 2.39-1.41 3.3-2.08 1.37-3.41 1.37c-1.32 0-2.46-.46-3.4-1.37s-1.41-2.01-1.41-3.3.47-2.39 1.41-3.3zm12.66 11.63c0 .27-.09.5-.28.68a.92.92 0 0 1 -.67.28h-16.7a.93.93 0 0 1 -.68-.28.92.92 0 0 1 -.27-.68v-10.13h2.2a6.74 6.74 0 0 0 -.31 2.05c0 2 .73 3.71 2.19 5.12s3.21 2.12 5.27 2.12a7.5 7.5 0 0 0 3.75-.97 7.29 7.29 0 0 0 2.72-2.63 6.93 6.93 0 0 0 1-3.63c0-.71-.11-1.39-.31-2.05h2.11v10.12zm0-13.95c0 .3-.11.56-.31.77a1.05 1.05 0 0 1 -.77.31h-2.72c-.3 0-.56-.11-.77-.31a1.05 1.05 0 0 1 -.31-.77v-2.58c0-.29.11-.54.31-.76s.47-.32.77-.32h2.72c.3 0 .56.11.77.32s.31.47.31.76z"
+                                fill-rule="evenodd"
+                            ></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <ul class="leading-relaxed">
+                    <li>
+                        <a class="text-gray-600 hover:underline font-semibold" href="#"
+                        >Terms</a
+                        >
+                    </li>
+                    <li>
+                        <a class="text-gray-600 hover:underline font-semibold" href="#"
+                        >Privacy</a
+                        >
+                    </li>
+                    <li>
+                        <a class="text-gray-600 hover:underline font-semibold" href="#"
+                        >Site Map</a
+                        >
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="max-w-5xl mx-auto flex items-center px-4 lg:px-0">
+        <svg
+            class="fill-current text-gray-600 w-5 h-5 flex-shrink-0"
+            viewBox="0 0 1000 1000"
+            role="presentation"
+            aria-hidden="true"
+            focusable="false"
+        >
+            <path
+                d="m499.3 736.7c-51-64-81-120.1-91-168.1-10-39-6-70 11-93 18-27 45-40 80-40s62 13 80 40c17 23 21 54 11 93-11 49-41 105-91 168.1zm362.2 43c-7 47-39 86-83 105-85 37-169.1-22-241.1-102 119.1-149.1 141.1-265.1 90-340.2-30-43-73-64-128.1-64-111 0-172.1 94-148.1 203.1 14 59 51 126.1 110 201.1-37 41-72 70-103 88-24 13-47 21-69 23-101 15-180.1-83-144.1-184.1 5-13 15-37 32-74l1-2c55-120.1 122.1-256.1 199.1-407.2l2-5 22-42c17-31 24-45 51-62 13-8 29-12 47-12 36 0 64 21 76 38 6 9 13 21 22 36l21 41 3 6c77 151.1 144.1 287.1 199.1 407.2l1 1 20 46 12 29c9.2 23.1 11.2 46.1 8.2 70.1zm46-90.1c-7-22-19-48-34-79v-1c-71-151.1-137.1-287.1-200.1-409.2l-4-6c-45-92-77-147.1-170.1-147.1-92 0-131.1 64-171.1 147.1l-3 6c-63 122.1-129.1 258.1-200.1 409.2v2l-21 46c-8 19-12 29-13 32-51 140.1 54 263.1 181.1 263.1 1 0 5 0 10-1h14c66-8 134.1-50 203.1-125.1 69 75 137.1 117.1 203.1 125.1h14c5 1 9 1 10 1 127.1.1 232.1-123 181.1-263.1z"
+            ></path>
+        </svg>
+        <p class="text-gray-600 text-sm pl-2">
+            &copy; 2019 Airbnb, Inc. All rights reserved.
+        </p>
+    </div>
+</footer>
+</body>
 </html>
