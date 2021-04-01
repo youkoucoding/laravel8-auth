@@ -69,32 +69,32 @@
     </div>
 </header>
 
-<div class="max-w-5xl mx-auto lg:py-16 py-12 lg:px-0 px-4">
+<div class="max-w-6xl mx-auto lg:py-16 py-12 lg:px-0 px-4">
     <h3 class="font-bold bold text-2xl mb-4 leading-none">
         Book unique homes and experiences.
     </h3>
     <form action="#" class="lg:mb-16 mb-10">
         @csrf
 
-        {{--check in--}}
         <div class="flex items-start justify-start flex-wrap">
-            <div class="lg:w-1/4 w-full lg:px-2 mb-4 lg:mb-0">
+            {{--check in--}}
+            <div class="lg:w-1/5 w-full lg:px-2 mb-4 mr-2 lg:mb-0">
                 <label for="checkin"
-                >Check in</label
+                >Check In </label
                 >
                 <input
                     type="date"
                     class="relative border border-gray-200 outline-none px-4 py-4 rounded-md hover:border-gray-400 focus:border-gray-400 md:col-span-2"
-                    id="checkin_checkout"
+                    id="checkin"
                     placeholder="yyyy/mm/dd"
 
                 />
             </div>
 
             {{--check out--}}
-            <div class="lg:w-1/4 w-full lg:px-2 lg:mb-0">
-                <label for="checkin_checkout"
-                >Check Out </label
+            <div class="lg:w-1/5 w-full lg:px-2 mr-2 lg:mb-0">
+                <label for="checkout"
+                >Check Out</label
                 >
                 <input
                     type="date"
@@ -105,7 +105,7 @@
             </div>
 
             {{--guest numbers--}}
-            <div class="lg:w-1/4 w-full lg:pl-2 lg:mb-0">
+            <div class="lg:w-1/5 w-full lg:pl-2 mr-2 lg:mb-0">
                 <label for="guests">Guests </label>
                 <div
                     class="relative border border-gray-200 outline-none px-4 py-4 rounded-md hover:border-gray-400 focus:border-gray-400 md:col-span-2"
@@ -115,34 +115,47 @@
                         <option value="2">2 guests</option>
                         <option value="3">3 guests</option>
                     </select>
-                    <div
-                        class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
-                    ></div>
+                    {{--                    <div--}}
+                    {{--                        class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"--}}
+                    {{--                    ></div>--}}
                 </div>
             </div>
 
             {{--meal--}}
-            <div class="lg:w-1/4 w-full lg:pl-2 lg:mb-0">
+            <div class="lg:w-1/5 w-full lg:pl-2 mr-2 lg:mb-0">
                 <label for="dinner">Meals </label>
 
                 <div
-                    class="relative  outline-none px-4 py-4 rounded-md hover:border-gray-400 focus:border-gray-400 md:col-span-2"
+                    class="relative outline-none px-4 py-4 rounded-md hover:border-gray-400 focus:border-gray-400 md:col-span-2"
                 >
 
-                    <label class="container m-3">
+                    <label class="container mr-1">
                         <input type="checkbox" checked="checked">
-                        <span class="checkmark"></span>Breakfast
+                        <span class="checkmark">Breakfast</span>
                     </label>
-                    <label class="container m-3">
+                    <label class="container">
                         <input type="checkbox">
-                        <span class="checkmark"></span>Dinner
+                        <span class="checkmark">Dinner</span>
                     </label>
                 </div>
-
             </div>
 
+            {{--button--}}
+            <div class="lg:w-1/6 w-full lg:pl-2 lg:mb-0 lg:mt-2">
+                <div
+                    class="relative outline-none px-0 py-4 rounded-md hover:border-gray-400 focus:border-gray-400 md:col-span-2"
+                >
+                    <a
+                        href="#"
+                        class="bg-gradient-to-r from-yellow-400 via-red-600 to-yellow-400 hover:ring-2 shadow-lg px-9 py-3 rounded text-white font-bold inline-block"
+                    >
+                        Book Now
+                    </a>
+                </div>
+            </div>
         </div>
     </form>
+
     <h3 class="font-bold bold text-2xl mb-4 leading-none">
         What guests are saying about homes in here.
     </h3>
