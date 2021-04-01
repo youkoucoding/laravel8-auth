@@ -24,6 +24,11 @@ class Room extends Model
         'room_status',
         'room_description',
         'room_image_url',
-        'order_id',
     ];
+
+
+    public function order()
+    {
+        return $this->belongsTo(Order::class);
+    }
 }
