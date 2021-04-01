@@ -51,7 +51,7 @@
 
                 <a
                     href="{{route('auth.login')}}"
-                    class="transition bg-white px-10 py-3  rounded font-bold hover:bg-gray-300 block w-full text-center border-2 border-white"
+                    class="transition bg-white px-10 py-3 rounded font-bold hover:bg-gray-300 block w-full text-center border-2 border-white"
                 >Login</a
                 >
             </div>
@@ -143,11 +143,11 @@
             {{--button--}}
             <div class="lg:w-1/6 w-full lg:pl-2 lg:mb-0 lg:mt-2">
                 <div
-                    class="relative outline-none px-0 py-4 rounded-md hover:border-gray-400 focus:border-gray-400 md:col-span-2"
+                    class="relative outline-none px-0 py-4 rounded-md md:col-span-2"
                 >
                     <a
                         href="#"
-                        class="bg-gradient-to-r from-yellow-400 via-red-600 to-yellow-400 hover:ring-2 shadow-lg px-9 py-3 rounded text-white font-bold inline-block"
+                        class="bg-gradient-to-r from-yellow-400 via-red-600 to-yellow-400 transition duration-300 ease-in-out hover:text-black transform hover:-translate-y-1 hover:scale-110 shadow-lg px-9 py-3 rounded text-white font-bold inline-block"
                     >
                         Book Now
                     </a>
