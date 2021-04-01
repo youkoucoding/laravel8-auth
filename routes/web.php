@@ -27,3 +27,7 @@ Route::group(['middleware' => ['AuthCheck']], function () {
     Route::get('/auth/register', [AuthController::class, 'register'])->name('auth.register');
     Route::get('/admin/dashboard', [AuthController::class, 'dashboard'])->name('admin.dashboard');
 });
+
+Route::get('/test', function () {
+    return view('order.order');
+});
