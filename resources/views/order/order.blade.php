@@ -7,7 +7,7 @@
                 <h1 class="text-6xl font-bold text-gray-800">Order Confirm</h1>
             </div>
         </div>
-        <div class="mt-16 relative max-w-2xl mx-auto">
+        <div class="mt-16 relative max-w-2xl mx-auto flex flex-wrap">
             <div
                 class="absolute z-10 inset-0 bg-gradient-to-r from-yellow-300 via-red-500 to-gray-500 shadow-lg transform -skew-x-6 sm:skew-x-0 sm:-rotate-6 sm:rounded-lg"
             ></div>
@@ -20,7 +20,7 @@
                     @endif
 
                     @csrf
-                    <div class="flex flex-col space-y-3">
+                    <div class="flex flex-col flex-wrap space-y-3">
                         {{-- username--}}
                         <div class="flex flex-row space-x-4 items-center justify-between mx-10">
                             <p class="text-gray-700 text-lg font-bold">UserName:</p>
